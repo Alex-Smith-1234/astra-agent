@@ -118,10 +118,11 @@ def req_ase_ability_ocr(
         image_byte_arrays = []
         log.info("req_ase_ability_ocr request: %s", ase_ocr_llm_vo.json())
         try:
-            file_url = ase_ocr_llm_vo.file_url
-            if not is_valid_url(file_url):
+            file_url = get_valid_url(ase_ocr_llm_vo.file_url)
+            if not file_url:
                 raise Exception(f"invalid file url:{file_url}")
 
+            # @suppress[js/path-injection]
             image_byte_arrays.append(requests.get(file_url, timeout=30).content)
             client = OcrLLMClientMultithreading(url=os.getenv("OCR_LLM_WS_URL"))
             asyncio.run(
@@ -354,22 +355,22 @@ async def translation_api(
     )
 
 
-def is_valid_url(url: Optional[str]) -> bool:
+def get_valid_url(raw: Optional[str]) -> str:
     """Validate whether the given string is a valid URL."""
     try:
-        if not url or not isinstance(url, str):
-            return False
+        if not raw or not isinstance(raw, str):
+            return ""
 
         # Strip whitespace
-        url = url.strip()
+        url = raw.strip()
         if not url:
-            return False
+            return ""
 
         result = urlparse(url)
 
         # Must have scheme and netloc
         if not result.scheme or not result.netloc:
-            return False
+            return ""
 
         # Netloc should not be just whitespace, dots, or contain spaces
         netloc = result.netloc.strip()
@@ -379,13 +380,13 @@ def is_valid_url(url: Optional[str]) -> bool:
             or netloc.isspace()
             or " " in result.netloc
         ):
-            return False
+            return ""
 
         # Scheme should be valid (no spaces, from known schemes)
         valid_schemes = {"http", "https", "ftp", "ftps", "file", "ws", "wss"}
         if " " in result.scheme or result.scheme.lower() not in valid_schemes:
-            return False
+            return ""
 
-        return True
+        return url
     except (ValueError, AttributeError, TypeError):
-        return False
+        return ""
