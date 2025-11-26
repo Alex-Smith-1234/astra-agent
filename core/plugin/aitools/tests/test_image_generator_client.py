@@ -8,8 +8,13 @@ from unittest.mock import Mock, patch
 
 import pytest
 from plugin.aitools.service.image_generator.image_generator_client import (
-    AssembleHeaderException, ImageGenerator, Url, get_body, parse_url,
-    sha256base64)
+    AssembleHeaderException,
+    ImageGenerator,
+    Url,
+    get_body,
+    parse_url,
+    sha256base64,
+)
 
 
 class TestUtilityFunctions:

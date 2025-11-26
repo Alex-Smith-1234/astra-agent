@@ -12,9 +12,13 @@ import re
 from urllib.parse import parse_qs, urlparse
 
 import pytest
-from plugin.aitools.common.hmac_gen import (AssembleHeaderException, Url,
-                                            assemble_auth_url, parse_url,
-                                            sha256base64)
+from plugin.aitools.common.hmac_gen import (
+    AssembleHeaderException,
+    Url,
+    assemble_auth_url,
+    parse_url,
+    sha256base64,
+)
 
 
 class TestSha256Base64:

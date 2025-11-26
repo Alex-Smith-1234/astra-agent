@@ -1,7 +1,9 @@
 from typing import Optional
 
 from plugin.aitools.service.ase_sdk.__base.entities.req_data import (
-    BaseReqSourceData, ReqData)
+    BaseReqSourceData,
+    ReqData,
+)
 from pydantic import BaseModel
 
 

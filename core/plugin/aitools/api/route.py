@@ -16,23 +16,31 @@ from typing import Union
 
 import requests
 from fastapi import APIRouter, Request
-from plugin.aitools.api.schema.types import (OCRLLM, ErrorCResponse,
-                                             ErrorResponse, ImageGenerate,
-                                             ImageUnderstandingInput, ISEInput,
-                                             SmartTTSInput,
-                                             SuccessDataResponse,
-                                             TranslationInput)
+from plugin.aitools.api.schema.types import (
+    OCRLLM,
+    ErrorCResponse,
+    ErrorResponse,
+    ImageGenerate,
+    ImageUnderstandingInput,
+    ISEInput,
+    SmartTTSInput,
+    SuccessDataResponse,
+    TranslationInput,
+)
 from plugin.aitools.common.logger import log
 from plugin.aitools.const import const
 from plugin.aitools.const.err_code.code import CodeEnum
 from plugin.aitools.const.err_code.code_convert import CodeConvert
 from plugin.aitools.service.ase_sdk.common.entities.req_data import Credentials
-from plugin.aitools.service.ase_sdk.exception.CustomException import \
-    CustomException
-from plugin.aitools.service.ocr_llm.client_multithreading import \
-    OcrLLMClientMultithreading
+from plugin.aitools.service.ase_sdk.exception.CustomException import CustomException
+from plugin.aitools.service.ocr_llm.client_multithreading import (
+    OcrLLMClientMultithreading,
+)
 from plugin.aitools.service.ocr_llm.entities.req_data_multithreading import (
-    BodyM, OcrLLMReqSourceDataMultithreading, PayloadM)
+    BodyM,
+    OcrLLMReqSourceDataMultithreading,
+    PayloadM,
+)
 
 from common.otlp.log_trace.node_trace_log import NodeTraceLog, Status
 from common.otlp.metrics.meter import Meter
@@ -199,12 +207,11 @@ def req_ase_ability_image_generate(
         kafka_service = get_kafka_producer_service()
 
         try:
-            from plugin.aitools.service.ase_sdk.__base.entities.req_data import \
-                ReqData
-            from plugin.aitools.service.ase_sdk.common.client import \
-                CommonClient
-            from plugin.aitools.service.ase_sdk.common.entities.req_data import \
-                CommonReqSourceData
+            from plugin.aitools.service.ase_sdk.__base.entities.req_data import ReqData
+            from plugin.aitools.service.ase_sdk.common.client import CommonClient
+            from plugin.aitools.service.ase_sdk.common.entities.req_data import (
+                CommonReqSourceData,
+            )
 
             client = CommonClient(
                 url=os.getenv("IMAGE_GENERATE_URL"),
@@ -295,8 +302,7 @@ def req_ase_ability_image_generate(
 def smarttts(
     params: SmartTTSInput, request: Request
 ) -> Union[SuccessDataResponse, ErrorResponse]:
-    from plugin.aitools.service.speech_synthesis.voice_main import \
-        smarttts_main
+    from plugin.aitools.service.speech_synthesis.voice_main import smarttts_main
 
     return smarttts_main(
         text=params.text, vcn=params.vcn, speed=params.speed, request=request

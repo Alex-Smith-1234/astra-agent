@@ -12,8 +12,9 @@ from typing import Any, Union
 from plugin.aitools.api.schema.types import ErrorResponse, SuccessDataResponse
 from plugin.aitools.const import const
 from plugin.aitools.const.err_code.code import CodeEnum
-from plugin.aitools.service.speech_synthesis.smart_tts.smart_tts_client import \
-    SmartTTSClient
+from plugin.aitools.service.speech_synthesis.smart_tts.smart_tts_client import (
+    SmartTTSClient,
+)
 
 from common.otlp.log_trace.node_trace_log import NodeTraceLog, Status
 from common.otlp.metrics.meter import Meter

@@ -9,12 +9,7 @@ from typing import Any
 from unittest.mock import Mock, mock_open, patch
 
 import pytest
-from plugin.link.main import (
-    load_env_file,
-    main,
-    setup_python_path,
-    start_service,
-)
+from plugin.link.main import load_env_file, main, setup_python_path, start_service
 
 
 @pytest.mark.unit

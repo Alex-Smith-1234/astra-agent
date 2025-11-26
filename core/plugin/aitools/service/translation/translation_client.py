@@ -13,8 +13,10 @@ from typing import Any, Dict, Tuple
 
 import requests
 from plugin.aitools.common.hmac_gen import assemble_auth_url
-from plugin.aitools.const.translation_constants import (SUPPORTED_LANGUAGES,
-                                                        is_valid_language_pair)
+from plugin.aitools.const.translation_constants import (
+    SUPPORTED_LANGUAGES,
+    is_valid_language_pair,
+)
 
 
 class TranslationClient:

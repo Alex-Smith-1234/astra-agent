@@ -8,8 +8,7 @@ from typing import Generator
 from unittest.mock import Mock, patch
 
 import pytest
-from plugin.aitools.service.translation.translation_client import \
-    TranslationClient
+from plugin.aitools.service.translation.translation_client import TranslationClient
 
 
 class TestTranslationClient:

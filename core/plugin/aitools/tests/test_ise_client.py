@@ -6,8 +6,12 @@ import os
 from unittest.mock import Mock, patch
 
 import pytest
-from plugin.aitools.service.ise.ise_client import (AudioConverter, ISEClient,
-                                                   ISEParam, ISEResultParser)
+from plugin.aitools.service.ise.ise_client import (
+    AudioConverter,
+    ISEClient,
+    ISEParam,
+    ISEResultParser,
+)
 
 
 class TestAudioConverter:
