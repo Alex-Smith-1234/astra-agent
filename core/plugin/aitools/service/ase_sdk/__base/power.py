@@ -8,9 +8,7 @@ from urllib.parse import urlencode
 
 import requests
 from plugin.aitools.service.ase_sdk.__base.entities.req_data import (
-    BaseReqSourceData,
-    ReqData,
-)
+    BaseReqSourceData, ReqData)
 from plugin.aitools.service.ase_sdk.__base.entities.result import Result
 from plugin.aitools.service.ase_sdk.const.data_status import DataStatusEnum
 from websockets import connect

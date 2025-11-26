@@ -10,11 +10,8 @@ import time
 from functools import cache
 from typing import Optional
 
-from plugin.aitools.const.const import (
-    SERVICE_LOCATION_KEY,
-    SERVICE_PORT_KEY,
-    SERVICE_SUB_KEY,
-)
+from plugin.aitools.const.const import (SERVICE_LOCATION_KEY, SERVICE_PORT_KEY,
+                                        SERVICE_SUB_KEY)
 
 
 def new_sid() -> str:

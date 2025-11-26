@@ -4,17 +4,10 @@ import os
 import sys
 from unittest.mock import patch
 
-from const.const import (
-    ENV_DEVELOPMENT,
-    ENV_PRERELEASE,
-    ENV_PRODUCTION,
-    IMAGE_GENERATE_MAX_PROMPT_LEN,
-    SERVICE_APP_KEY,
-    SERVICE_LOCATION_KEY,
-    SERVICE_NAME_KEY,
-    SERVICE_PORT_KEY,
-    SERVICE_SUB_KEY,
-)
+from const.const import (ENV_DEVELOPMENT, ENV_PRERELEASE, ENV_PRODUCTION,
+                         IMAGE_GENERATE_MAX_PROMPT_LEN, SERVICE_APP_KEY,
+                         SERVICE_LOCATION_KEY, SERVICE_NAME_KEY,
+                         SERVICE_PORT_KEY, SERVICE_SUB_KEY)
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 

@@ -7,12 +7,11 @@ import re
 from typing import Any, Optional
 
 from fastapi import HTTPException
-from plugin.aitools.const.translation_constants import (
-    CHINESE_LANGUAGE_CODE,
-    VALID_LANGUAGE_CODES,
-    is_valid_language_pair,
-)
-from plugin.aitools.service.ase_sdk.util.pdf_convert import DOCUMENT_PAGE_UNLIMITED
+from plugin.aitools.const.translation_constants import (CHINESE_LANGUAGE_CODE,
+                                                        VALID_LANGUAGE_CODES,
+                                                        is_valid_language_pair)
+from plugin.aitools.service.ase_sdk.util.pdf_convert import \
+    DOCUMENT_PAGE_UNLIMITED
 from pydantic import BaseModel, field_validator, model_validator, validator
 
 

@@ -24,7 +24,8 @@ with patch.dict(
         "common.service": Mock(),
     },
 ):
-    from service.route_service import image_understanding_main, ise_evaluate_main
+    from service.route_service import (image_understanding_main,
+                                       ise_evaluate_main)
 
 
 class MockContextManager:

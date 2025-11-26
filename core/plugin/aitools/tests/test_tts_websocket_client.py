@@ -8,9 +8,8 @@ from typing import Any
 from unittest.mock import Mock, patch
 
 import pytest
-from plugin.aitools.service.speech_synthesis.tts.tts_websocket_client import (
-    TTSWebSocketClient,
-)
+from plugin.aitools.service.speech_synthesis.tts.tts_websocket_client import \
+    TTSWebSocketClient
 
 
 class TestTTSWebSocketClient:

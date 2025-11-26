@@ -9,7 +9,6 @@ from typing import Any
 from unittest.mock import Mock, mock_open, patch
 
 import pytest
-from plugin.link.consts import const
 from plugin.link.main import (
     load_env_file,
     main,
